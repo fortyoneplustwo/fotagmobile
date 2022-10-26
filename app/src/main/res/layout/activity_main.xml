@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:elevation="8dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetEnd="8dp"
+        app:contentInsetLeft="8dp"
+        app:contentInsetRight="8dp"
+        app:contentInsetStart="8dp"
+        app:elevation="8dp"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <RelativeLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <ImageButton
+                android:id="@+id/buttonLoad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:onClick="loadImages"
+                app:srcCompat="@android:drawable/ic_menu_rotate" />
+
+            <ImageButton
+                android:id="@+id/buttonClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/buttonLoad"
+                android:layout_toRightOf="@id/buttonLoad"
+                android:background="@null"
+                android:onClick="clearImages"
+                app:srcCompat="@android:drawable/ic_menu_delete" />
+
+            <RatingBar
+                android:id="@+id/filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:numStars="5"
+                android:stepSize="1.0"
+                android:rating="0" />
+                <!-- android:theme="@style/AppTheme" -->
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/gridBackground"
+        android:layout_gravity="center"
+        android:numColumns="1"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+</android.support.constraint.ConstraintLayout>

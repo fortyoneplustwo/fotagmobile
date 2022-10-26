@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Fotag Mobile (oambrois)</string>
+    <string name="buttonLoadName">Load</string>
+    <string name="buttonClearName">Clear</string>
+</resources>
